@@ -48,7 +48,7 @@ export default function PortfolioPage() {
         
         {/* Nombre Centrado con Efecto Typewriter */}
         <motion.h1 
-          className={`font-extrabold leading-[1.1] tracking-tighter text-center text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40 transition-all duration-1000 ease-in-out ${isNameTyped ? "text-4xl md:text-5xl lg:text-[2.5rem] text-left" : "text-5xl md:text-6xl lg:text-[6.5rem]"}`}
+          className={`font-extrabold leading-[1.1] tracking-tighter text-center text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40 transition-all duration-1000 ease-in-out ${isNameTyped ? "text-4xl md:text-5xl lg:text-[2.5rem] lg:text-left" : "text-5xl md:text-6xl lg:text-[6.5rem]"}`}
           variants={{
             hidden: { opacity: 1 },
             visible: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.2 } }
