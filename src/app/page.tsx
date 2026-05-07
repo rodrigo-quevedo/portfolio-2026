@@ -1,20 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { info } from "@/data/info";
 
 
 export default function PortfolioPage() {
+  // Estado para la animación de reducción del título
+  const [isNameTyped, setIsNameTyped] = useState(false);
+
   // Clase de utilidad para el efecto de Glassmorphism
   const glassCard = "bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-2xl rounded-[24px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/[0.15] hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)] transition-all duration-500";
 
   // Configuración base para animaciones de entrada fluidas (Framer Motion)
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0}, 
-      transition: { duration: 0.6, ease: "easeOut" } }
-
+    visible: { 
+      opacity: 1, 
+      y: 0},
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
 
   // Contenedor que ejecuta el efecto escalonado (stagger) a sus elementos hijos
   const staggerContainer = {
@@ -28,25 +34,33 @@ export default function PortfolioPage() {
   // Variante de animación individual para cada tarjeta en un grid
   const cardVariant = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0}, 
-      transition: { duration: 0.6, ease: "easeOut" } }
- 
+    visible: { 
+      opacity: 1, y: 0},
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
+
 
   return (
     <main className="min-h-screen text-slate-200 font-sans selection:bg-blue-500/30 selection:text-blue-200">
       
       {/* 1. HERO SECTION */}
-      <section className="min-h-[90vh] flex flex-col justify-center max-w-6xl mx-auto px-6 py-24 gap-16">
+      <section className={`min-h-[90vh] flex flex-col justify-center max-w-6xl mx-auto px-6 py-24 transition-all duration-1000 ease-in-out ${isNameTyped ? "gap-6 md:gap-8" : "gap-16"}`}>
         
         {/* Nombre Centrado con Efecto Typewriter */}
         <motion.h1 
-          className="text-5xl md:text-6xl lg:text-[6.5rem] font-extrabold leading-[1.1] tracking-tighter text-center text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40"
+          className={`font-extrabold leading-[1.1] tracking-tighter text-center text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40 transition-all duration-1000 ease-in-out ${isNameTyped ? "text-4xl md:text-5xl lg:text-[2.5rem] text-left" : "text-5xl md:text-6xl lg:text-[6.5rem]"}`}
           variants={{
             hidden: { opacity: 1 },
             visible: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.2 } }
           }}
           initial="hidden"
           animate="visible"
+          onAnimationComplete={(variant) => {
+            if (variant === "visible") {
+              // Un pequeño delay (500ms) antes de encoger permite al usuario leer el nombre completo
+              setTimeout(() => setIsNameTyped(true), 500);
+            }
+          }}
         >
           {info.personal.name.split("").map((char, index) => (
             <motion.span
@@ -73,9 +87,12 @@ export default function PortfolioPage() {
         {/* Resto de la Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.0 } }
+            }}
+            initial="hidden"
+            animate={isNameTyped ? "visible" : "hidden"}
             className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left"
           >
             <p className="text-xl md:text-2xl text-blue-400 font-medium mb-6 tracking-tight">
@@ -107,9 +124,12 @@ export default function PortfolioPage() {
 
           {/* Contenedor de la Foto de Perfil */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 1, ease: "easeOut", delay: 1.3 }}
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay: 1.2 } }
+            }}
+            initial="hidden"
+            animate={isNameTyped ? "visible" : "hidden"}
             className="lg:col-span-5 flex justify-center items-center relative order-first lg:order-last"
           >
             {/* Orbe de luz decorativo detrás de la imagen */}
@@ -121,7 +141,7 @@ export default function PortfolioPage() {
                   src="/profile-pic.jpg" 
                   alt={`Foto de perfil de ${info.personal.name}`} 
                   fill 
-                  className="object-cover  group-hover:grayscale-0 transition-all duration-500" 
+                  className="object-cover group-hover:grayscale-0 transition-all duration-500" 
                   priority
                 />
               </div>
