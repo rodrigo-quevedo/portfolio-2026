@@ -2,7 +2,7 @@ export const info = {
   personal: {
     name: "Rodrigo Martín Quevedo",
     title: "Desarrollador Full Stack | Estudiante de Ingeniería en Software",
-    location: "Córdoba, Argentina",
+    location: "Ciudad de Córdoba, Córdoba, Argentina",
     phone: "+54 9 351 3197050",
     emails: ["rodrigo.quevedo.tech@gmail.com"],
     github: "https://github.com/rodrigo-quevedo", // Reemplazar con tu enlace real
