@@ -152,7 +152,7 @@ export default function PortfolioPage() {
 
       {/* 2. TECH STACK (BENTO GRID) */}
       <section className="max-w-6xl mx-auto px-6 py-24 overflow-hidden">
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-12 tracking-tight text-white">Arquitectura Tecnológica.</motion.h2>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-12 tracking-tight text-white">Stack Tecnológico.</motion.h2>
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Frontend ocupa 2 columnas */}
           <motion.div variants={cardVariant} className={`md:col-span-2 ${glassCard}`}>
@@ -223,7 +223,7 @@ export default function PortfolioPage() {
 
       {/* 4. PROJECTS */}
       <section className="max-w-6xl mx-auto px-6 py-24 overflow-hidden">
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 tracking-tight text-white">Proyectos Destacados.</motion.h2>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 tracking-tight text-white">Proyectos Personales.</motion.h2>
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {info.projects.map((proj, idx) => (
             <motion.div variants={cardVariant} key={idx} className={`${glassCard} flex flex-col`}>
@@ -274,6 +274,33 @@ export default function PortfolioPage() {
 
         </motion.div>
       </section>
+
+      {/* 6. CERTIFICACIONES */}
+      {info.certificates && info.certificates.length > 0 && (
+        <section className="max-w-6xl mx-auto px-6 py-24 overflow-hidden border-t border-white/5">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 tracking-tight text-white">Certificaciones.</motion.h2>
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {info.certificates.map((cert, idx) => (
+              <motion.div variants={cardVariant} key={idx} className={`${glassCard} flex flex-col`}>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-2">{cert.title}</h3>
+                  <p className="text-blue-400 font-medium">{cert.issuer}</p>
+                </div>
+                <div className="flex items-center gap-3 text-slate-300 text-sm mb-6">
+                  <span className="w-5 h-5 flex items-center justify-center bg-white/10 rounded">📅</span> {cert.date}
+                </div>
+                {cert.link && (
+                  <div className="mt-auto border-t border-white/10 pt-6">
+                    <a href={cert.link} target="_blank" rel="noreferrer" className="text-sm font-bold text-white hover:text-blue-400 transition-colors flex items-center gap-2 w-max">
+                      Ver credencial ↗
+                    </a>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+      )}
 
     </main>
   );

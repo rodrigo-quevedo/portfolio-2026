@@ -75,5 +75,37 @@ export const info = {
       level: "Lecto-comprensión y conversación fluida",
       note: "(Experiencia trabajando con clientes de EE. UU.)"
     }
+  ],
+  certificates: [
+    {
+      title: "Bootcamp Fullstack Web (SQL, .NET, React)",
+      issuer: "Extrados",
+      date: "Septiembre 2024 – Junio 2025",
+      link: "https://drive.google.com/file/d/1ibhJHEKL-3maKAx0b5wL6WBfvZstwdkE/view?usp=sharing"
+    },
+    {
+      title: "Master Git & GitHub 2024",
+      issuer: "Udemy",
+      date: "Abril 2024 – Mayo 2024",
+      link: "https://www.udemy.com/certificate/UC-c27936d4-c63f-4bba-9fd6-3455d5eb724b/"
+    },
+    {
+      title: "The Full Stack Web Development Bootcamp 2024 - MERN STACK",
+      issuer: "Udemy",
+      date: "Diciembre 2023 – Abril 2024",
+      link: "https://www.udemy.com/certificate/UC-bf2e4c6d-c715-4194-8a56-3b04f030502b/"
+    },
+    {
+      title: "React JS - Complete Guide for Frontend Web Development",
+      issuer: "Udemy",
+      date: "Septiembre 2023 – Noviembre 2023",
+      link: "https://www.udemy.com/certificate/UC-e818f6bb-735b-49b3-a858-9058270d25a9/"
+    },
+    {
+      title: "Armado y reparación de PC",
+      issuer: "Integral Capacitando - UTN",
+      date: "Agosto 2021 – Diciembre 2021",
+      link: "https://drive.google.com/file/d/1yYzsd-cYcc6KUEHefgZquEtYZtxgg88k/view?usp=sharing"
+    }
   ]
 };
