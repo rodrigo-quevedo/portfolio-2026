@@ -10,7 +10,7 @@ export default function PortfolioPage() {
           {info.personal.name}
         </h1>
         <p className="text-xl md:text-2xl text-blue-600 font-medium mb-6">
-          Transformando ideas en software escalable.
+          {info.personal.title}
         </p>
         <p className="text-slate-600 max-w-2xl mb-8 leading-relaxed text-lg">
           {info.profile}

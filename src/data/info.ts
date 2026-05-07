@@ -4,35 +4,37 @@ export const info = {
     title: "Desarrollador Full Stack | Estudiante de Ingeniería en Software",
     location: "Córdoba, Argentina",
     phone: "+54 9 351 3197050",
-    emails: ["rodrigo.quevedo.tech@gmail.com", "martinqueve60@gmail.com"],
+    emails: ["rodrigo.quevedo.tech@gmail.com"],
     github: "https://github.com/rodrigo-quevedo", // Reemplazar con tu enlace real
     linkedin: "https://linkedin.com/in/rodrigoquevedo-dev" // Reemplazar con tu enlace real
   },
-  profile: "Desarrollador con alta capacidad de aprendizaje y adaptabilidad, enfocado en el trabajo colaborativo y la mejora continua. Poseo una sólida base técnica en el ecosistema JavaScript/TypeScript (MERN Stack) y .NET, complementada con conocimientos en soporte de hardware y herramientas informáticas.",
+  profile: "Desarrollador con alta capacidad de aprendizaje y adaptabilidad, enfocado en el trabajo colaborativo y la mejora continua. Poseo una sólida base técnica en el ecosistema JavaScript/TypeScript (MERN Stack) y .NET Core. Actualmente estoy cursando la carrera de Ingeniería en Software en la Universidad Siglo 21. ",
   experience: [
     {
-      role: "Desarrollador Frontend (Pasantía)",
+      role: "Desarrollador Full Stack (Pasantía)",
       company: "TalentHub",
       modality: "Remoto",
-      date: "Ago 2025 – Nov 2025",
+      date: "Agosto 2025 – Noviembre 2025",
       tasks: [
         "Desarrollo de sitios y aplicaciones web utilizando React, Next.js, Node.js y TypeScript.",
         "Migración de secciones de Landing Pages desde diseños en Gamma hacia componentes funcionales en React.",
-        "Desarrollo de catálogo de productos con filtros dinámicos para una pyme de maquinaria, con integración de contacto vía WhatsApp."
+        "Desarrollo de catálogo de productos con filtros dinámicos para una pyme de maquinaria, con integración de contacto vía WhatsApp.",
+        "Desarrollo de scripts de automatización para actualización del stock de productos.",
+        "Desarrollo de dashboards, paneles y formularios para Aplicación de gestión de ventas y logística."
       ],
-      link: "#" // "Ver GitHub de TalentHub"
+      link: "#" 
     },
     {
-      role: "Programador React (Freelance)",
+      role: "Desarrollador Frontend (Freelance)",
       company: "Startup (EE. UU.)",
       modality: "Remoto",
       date: "Abril 2025",
       tasks: [
-        "Migración de una plataforma de streaming desde archivos estáticos (HTML/CSS) a una arquitectura moderna en React.",
+        "Migración del sitio web desde archivos estáticos (HTML/CSS) a una arquitectura moderna en React.",
         "Implementación de interfaces precisas siguiendo diseños en Figma.",
-        "Colaboración técnica y comunicación fluida en inglés con clientes internacionales."
+        "Colaboración técnica y comunicación fluida en inglés."
       ],
-      link: "#" // "Enlace al Repositorio"
+      link: "#" 
     }
   ],
   projects: [
@@ -41,8 +43,8 @@ export const info = {
       date: "Ago 2024 – Ene 2025",
       description: "Aplicación Full Stack para la gestión integral de compras, ventas y stock. Diseño y construcción total de la arquitectura del software desde cero.",
       stack: ["React.js", "Node.js", "Express.js", "MongoDB"],
-      demoUrl: "#", // Reemplazar con tu enlace
-      repoUrl: "#"  // Reemplazar con tu enlace
+      demoUrl: "https://gest-rodrigo-quevedo.onrender.com/", 
+      repoUrl: "https://github.com/rodrigo-quevedo/Gest" 
     }
   ],
   education: [
