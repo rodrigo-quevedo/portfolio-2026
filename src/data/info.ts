@@ -22,6 +22,7 @@ export const info = {
         "Desarrollo de scripts de automatización para actualización del stock de productos.",
         "Desarrollo de dashboards, paneles y formularios para Aplicación de gestión de ventas y logística."
       ],
+      stack: ["React.js", "Next.js", "Node.js", "TypeScript", "Prisma", "Supabase"],
       link: "#" 
     },
     {
@@ -34,6 +35,7 @@ export const info = {
         "Implementación de interfaces precisas siguiendo diseños en Figma.",
         "Colaboración técnica y comunicación fluida en inglés."
       ],
+      stack: ["React.js", "HTML5", "CSS3"],
       link: "#" 
     }
   ],
@@ -65,7 +67,7 @@ export const info = {
   ],
   skills: {
     frontend: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Material UI", "jQuery"],
-    backend: ["Node.js", "Express", "C#", ".NET Core", "ASP.NET Core", "Java"],
+    backend: ["Node.js", "Express", "C#", ".NET Core", "ASP.NET Core", "Java", "Prisma", "Supabase"],
     databases: ["MySQL", "MongoDB"],
     tools: ["Git", "GitHub", "Docker", "JWT", "REST APIs", "UML", "Linux Bash"]
   },
