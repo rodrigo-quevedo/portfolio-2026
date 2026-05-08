@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/navigation';
 import { myTechnologies } from "@/data/my-technologies";
 import { jobTechnologies } from "@/data/job-technologies";
 import { projectTechnologies } from "@/data/project-technologies";
@@ -11,6 +12,7 @@ import { socialLinks } from "@/data/social-links";
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaJava, FaDocker, FaGitAlt, FaGithub, FaNetworkWired, FaProjectDiagram, FaCode, FaLinkedin } from "react-icons/fa";
 import { SiTailwindcss, SiJavascript, SiTypescript, SiNextdotjs, SiMui, SiJquery, SiExpress, SiSharp, SiDotnet, SiMysql, SiMongodb, SiJsonwebtokens, SiGnubash, SiPrisma, SiSupabase } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
+import { UrlObject } from "url";
 
 type PageProps = {
   params: {
@@ -59,7 +61,20 @@ const getSkillIcon = (skill: string, className: string = "w-4 h-4") => {
 
 export default function LocalePortfolioPage({ params }: PageProps) {
   const t = useTranslations();
+
   const [isNameTyped, setIsNameTyped] = useState(false);
+
+  const localeOptions = [
+    { code: "es", label: t('ui.languageSpanish') },
+    { code: "en", label: t('ui.languageEnglish') }
+  ];
+
+  const pathname = usePathname();
+  const currentLocale = useLocale();
+  console.log("pathname", pathname);
+  console.log("currentLocale", currentLocale);
+
+
 
   const glassCard =
     "bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-2xl rounded-[24px] p-8 md:p-10 hover:bg-white/[0.05] hover:border-white/[0.15] hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)] transition-all duration-500";
@@ -90,6 +105,30 @@ export default function LocalePortfolioPage({ params }: PageProps) {
         className={`min-h-[90vh] flex flex-col justify-center max-w-6xl mx-auto px-6 py-24 transition-all duration-1000 ease-in-out ${
           isNameTyped ? "gap-6 md:gap-8" : "gap-16"
         }`}>
+        <div className="flex flex-col sm:flex-row justify-center lg:justify-end items-center gap-3 mb-10">
+          <span className="text-sm uppercase tracking-[0.32em] text-slate-400 sm:mr-2">
+            {t('ui.languageSwitchLabel')}
+          </span>
+          <div className="inline-flex rounded-full bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(15,23,42,0.35)] p-1">
+            {localeOptions.map((localeOption) => {
+              const isActive = localeOption.code === currentLocale;
+              return (
+                <Link
+                  locale={localeOption.code}
+                  key={localeOption.code}
+                  href={pathname}
+                  className={`px-4 py-2 text-sm font-semibold transition rounded-full ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-[0_10px_30px_rgba(59,130,246,0.25)]'
+                      : 'text-slate-300 hover:text-white hover:bg-white/10'
+                  }`} aria-current={isActive ? 'page' : undefined}>
+                  {localeOption.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
         <motion.h1
           className={`font-extrabold leading-[1.1] tracking-tighter text-center text-transparent bg-clip-text bg-linear-to-br from-white via-white to-white/40 transition-all duration-1000 ease-in-out ${
             isNameTyped
@@ -182,7 +221,7 @@ export default function LocalePortfolioPage({ params }: PageProps) {
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image
                   src="/profile-pic.jpg"
-                  alt={`${t('info.ui.altProfileImage')} ${t('personal.name')}`}
+                  alt={`${t('ui.altProfileImage')} ${t('personal.name')}`}
                   fill
                   className="object-cover group-hover:grayscale-0 transition-all duration-500"
                   priority
@@ -225,7 +264,7 @@ export default function LocalePortfolioPage({ params }: PageProps) {
           <motion.div variants={cardVariant} className={glassCard}>
             <h3 className="text-xl font-bold text-white mb-6">Backend & DB</h3>
             <div className="flex flex-wrap gap-3">
-              {[...t('skills.backend'), ...t('skills.databases')].map((skill) => (
+              {[...t.raw('skills.backend'), ...t.raw('skills.databases')].map((skill) => (
                 <span
                   key={skill}
                   className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 text-slate-300 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">

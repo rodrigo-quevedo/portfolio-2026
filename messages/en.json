@@ -11,7 +11,7 @@
     "github": "https://github.com/rodrigo-quevedo",
     "linkedin": "https://linkedin.com/in/rodrigoquevedo-dev"
   },
-  "profile": "Developer with high learning capacity and adaptability, focused on collaborative work and continuous improvement. I have a solid technical foundation in the JavaScript/TypeScript ecosystem (MERN Stack) and .NET Core. I am currently studying Software Engineering at Universidad Siglo 21.",
+  "profile": "Developer with high learning capacity and adaptability, focused on collaborative work and continuous improvement. I have a solid technical foundation in the JavaScript/TypeScript ecosystem (MERN Stack) and .NET Core. I'm currently studying Software Engineering at Universidad Siglo 21.",
   "experience": [
     {
       "role": "Full Stack Developer (Internship)",
@@ -56,15 +56,15 @@
     {
       "degree": "Software Engineering",
       "institution": "Universidad Siglo 21",
-      "status": "In progress (89% - 42 subjects approved)",
-      "stats": "Overall average: 9.65",
+      "status": "In progress (89% - 4 courses left)",
+      "stats": "Average score: 9.65 / 10",
       "date": "Estimated completion: 2027"
     },
     {
       "degree": "Software Analyst (Intermediate Degree)",
       "institution": "Universidad Siglo 21",
       "status": "Graduated",
-      "stats": "Overall average: 9.65",
+      "stats": "Average score: 9.65 / 10",
       "date": "2025"
     }
   ],
@@ -127,6 +127,9 @@
     "labelEmail": "Email",
     "labelProfile": "Profile",
     "labelLocation": "Location",
+    "languageSwitchLabel": "Language",
+    "languageEnglish": "English",
+    "languageSpanish": "Español",
     "altProfileImage": "Profile picture of"
   }
 }

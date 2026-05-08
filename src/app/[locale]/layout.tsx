@@ -1,37 +1,44 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import enMessages from "@/messages/en.json";
-import esMessages from "@/messages/es.json";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "@/styles/globals.css";
 
-export const dynamicParams = false;
+const plusJakarta = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta"
+});
 
-export function generateStaticParams() {
-  return [{ locale: "es" }, { locale: "en" }];
-}
+export const metadata: Metadata = {
+  title: "Rodrigo Quevedo - Portfolio",
+  description: "Desarrollador Full Stack | System Architect",
+};
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params.locale === "en" ? "en" : "es";
-  const messages = locale === "en" ? enMessages : esMessages;
 
-  return {
-    title: messages.metaTitle,
-    description: messages.metaDescription
-  };
-}
-
-export default async function LocaleLayout({
-  children,
-  params: { locale }
-}: {
+//i18n
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
+ 
+type Props = {
   children: React.ReactNode;
-  params: { locale: string };
-}) {
-  const messages = await getMessages();
-
+  params: Promise<{locale: string}>;
+};
+ 
+export default async function LocaleLayout({children, params}: Props)  {
+   // Ensure that the incoming `locale` is valid
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <html lang="es" className="scroll-smooth">
+      <body className={`${plusJakarta.variable} font-sans antialiased bg-[#050505] text-slate-300 relative overflow-x-hidden`}>
+        {/* Orbes de luz de fondo para el efecto Glassmorphism */}
+        <div className="fixed inset-0 z-[-1] pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-indigo-900/20 blur-[100px]"></div>
+        </div>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
