@@ -1,0 +1,132 @@
+{
+  "metaTitle": "Rodrigo Quevedo - Portfolio",
+  "metaDescription": "Professional portfolio of Rodrigo Martín Quevedo, Full Stack Developer.",
+  "defaultLocale": "en",
+  "personal": {
+    "name": "Rodrigo Martín Quevedo",
+    "title": "Full Stack Developer | Software Engineering Student",
+    "location": "Córdoba City, Córdoba, Argentina",
+    "phone": "+54 9 351 3197050",
+    "emails": ["rodrigo.quevedo.tech@gmail.com"],
+    "github": "https://github.com/rodrigo-quevedo",
+    "linkedin": "https://linkedin.com/in/rodrigoquevedo-dev"
+  },
+  "profile": "Developer with high learning capacity and adaptability, focused on collaborative work and continuous improvement. I have a solid technical foundation in the JavaScript/TypeScript ecosystem (MERN Stack) and .NET Core. I am currently studying Software Engineering at Universidad Siglo 21.",
+  "experience": [
+    {
+      "role": "Full Stack Developer (Internship)",
+      "company": "TalentHub",
+      "modality": "Remote",
+      "date": "August 2025 – November 2025",
+      "tasks": [
+        "Development of websites and web applications using React, Next.js, Node.js and TypeScript.",
+        "Migration of Landing Page sections from Gamma designs to functional React components.",
+        "Development of product catalog with dynamic filters for a SME machinery company, with WhatsApp contact integration.",
+        "Development of automation scripts for product stock updates.",
+        "Development of dashboards, panels and forms for sales and logistics management application."
+      ],
+      "stack": ["React.js", "Next.js", "Node.js", "TypeScript", "Prisma", "Supabase"],
+      "link": "#"
+    },
+    {
+      "role": "Frontend Developer (Freelance)",
+      "company": "Startup (USA)",
+      "modality": "Remote",
+      "date": "April 2025",
+      "tasks": [
+        "Migration of the website from static files (HTML/CSS) to a modern React architecture.",
+        "Implementation of precise interfaces following Figma designs.",
+        "Technical collaboration and fluent communication in English."
+      ],
+      "stack": ["React.js", "HTML5", "CSS3"],
+      "link": "#"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Gest - Inventory Manager",
+      "date": "Aug 2024 – Jan 2025",
+      "description": "Full Stack application for comprehensive management of purchases, sales and stock. Complete design and construction of the software architecture from scratch.",
+      "stack": ["React.js", "Node.js", "Express.js", "MongoDB"],
+      "demoUrl": "https://gest-rodrigo-quevedo.onrender.com/",
+      "repoUrl": "https://github.com/rodrigo-quevedo/Gest"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Software Engineering",
+      "institution": "Universidad Siglo 21",
+      "status": "In progress (89% - 42 subjects approved)",
+      "stats": "Overall average: 9.65",
+      "date": "Estimated completion: 2027"
+    },
+    {
+      "degree": "Software Analyst (Intermediate Degree)",
+      "institution": "Universidad Siglo 21",
+      "status": "Graduated",
+      "stats": "Overall average: 9.65",
+      "date": "2025"
+    }
+  ],
+  "skills": {
+    "frontend": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Material UI", "jQuery"],
+    "backend": ["Node.js", "Express", "C#", ".NET Core", "ASP.NET Core", "Java", "Prisma", "Supabase"],
+    "databases": ["MySQL", "MongoDB"],
+    "tools": ["Git", "GitHub", "Docker", "JWT", "REST APIs", "UML", "Linux Bash"]
+  },
+  "languages": [
+    {
+      "lang": "English",
+      "level": "Fluent reading comprehension and conversation",
+      "note": "(Experience working with US clients)"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Fullstack Web Bootcamp (SQL, .NET, React)",
+      "issuer": "Extrados",
+      "date": "September 2024 – June 2025",
+      "link": "https://drive.google.com/file/d/1ibhJHEKL-3maKAx0b5wL6WBfvZstwdkE/view?usp=sharing"
+    },
+    {
+      "title": "Master Git & GitHub 2024",
+      "issuer": "Udemy",
+      "date": "April 2024 – May 2024",
+      "link": "https://www.udemy.com/certificate/UC-c27936d4-c63f-4bba-9fd6-3455d5eb724b/"
+    },
+    {
+      "title": "The Full Stack Web Development Bootcamp 2024 - MERN STACK",
+      "issuer": "Udemy",
+      "date": "December 2023 – April 2024",
+      "link": "https://www.udemy.com/certificate/UC-bf2e4c6d-c715-4194-8a56-3b04f030502b/"
+    },
+    {
+      "title": "React JS - Complete Guide for Frontend Web Development",
+      "issuer": "Udemy",
+      "date": "September 2023 – November 2023",
+      "link": "https://www.udemy.com/certificate/UC-e818f6bb-735b-49b3-a858-9058270d25a9/"
+    },
+    {
+      "title": "PC Assembly and Repair",
+      "issuer": "Integral Capacitando - UTN",
+      "date": "August 2021 – December 2021",
+      "link": "https://drive.google.com/file/d/1yYzsd-cYcc6KUEHefgZquEtYZtxgg88k/view?usp=sharing"
+    }
+  ],
+  "ui": {
+    "sectionStack": "Technology Stack.",
+    "sectionExperience": "Work Experience.",
+    "sectionProjects": "Personal Projects.",
+    "sectionEducation": "Academic Background.",
+    "sectionCertificates": "Certifications.",
+    "buttonGithub": "GitHub",
+    "buttonLinkedin": "LinkedIn",
+    "linkSourceCode": "Source Code ↗",
+    "linkLiveDemo": "Live Demo ↗",
+    "linkCredential": "View credential ↗",
+    "labelEmail": "Email",
+    "labelProfile": "Profile",
+    "labelLocation": "Location",
+    "altProfileImage": "Profile picture of"
+  }
+}
