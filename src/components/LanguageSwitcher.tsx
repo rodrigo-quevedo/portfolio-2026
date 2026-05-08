@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
                   : 'text-slate-300 hover:text-white hover:bg-white/10'
               }`}
               aria-current={isActive ? 'page' : undefined}>
-              <CircleFlag countryCode={localeOption.flag} className='w-3 h-3 md:w-5 md:h-5'/>
+              <CircleFlag countryCode={localeOption.flag} className='w-3 h-3 sm:w-5 sm:h-5'/>
               <span className="text-xs font-semibold">{localeOption.code.toUpperCase()}</span>
             </Link>
           );
