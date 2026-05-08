@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
  
 type Props = {
   children: React.ReactNode;
@@ -37,7 +38,10 @@ export default async function LocaleLayout({children, params}: Props)  {
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[120px]"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-indigo-900/20 blur-[100px]"></div>
         </div>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <LanguageSwitcher />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
